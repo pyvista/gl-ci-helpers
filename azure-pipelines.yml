@@ -1,19 +1,34 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
 trigger:
-- master
+  # start a new build for every push
+  batch: False
+  branches:
+    include:
+      - master
+      - maint/*
 
-pool:
-  vmImage: 'Ubuntu-16.04'
-
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+jobs:
+- job: Windows
+  pool:
+    vmIMage: 'VS2017-Win2016'
+  variables:
+    AZURE_CI_WINDOWS: 'true'
+  strategy:
+    maxParallel: 4
+    matrix:
+      Python37-64bit:
+        PYTHON_VERSION: '3.7'
+        PYTHON_ARCH: 'x64'
+  steps:
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: $(PYTHON_VERSION)
+      architecture: $(PYTHON_ARCH)
+      addToPath: true
+  - powershell: |
+      Set-StrictMode -Version Latest
+      $ErrorActionPreference = "Stop"
+      $PSDefaultParameterValues['*:ErrorAction']='Stop'
+      powershell appveyor/install_opengl.ps1
+      pip install --upgrade pyglet
+      python -c "import pyglet; r = pyglet.gl.gl_info.get_renderer(); print(r); assert 'gallium' in r.lower()"
+    displayName: 'Run test'
