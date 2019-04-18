@@ -22,7 +22,7 @@ function DownloadMesaOpenGL ($architecture) {
         $filepath = "C:\Windows\system32\opengl32.dll"
     }
     takeown /F $filepath /A
-    icacls $filepath /grant APPVYR-WIN\appveyor:F
+    icacls $filepath /grant "${env:ComputerName}\${env:UserName}:F"
     Remove-item -LiteralPath $filepath
     Write-Host "Downloading" $url
     $retry_attempts = 2

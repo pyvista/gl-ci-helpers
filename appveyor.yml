@@ -1,0 +1,18 @@
+environment:
+  matrix:
+    - PYTHON: "C:\\Python37-x64"
+      PYTHON_ARCH: "64"
+
+platform:
+    -x64
+
+install:
+  - "SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%"
+  - "python --version"
+  - "pip install -q pyglet"
+  - "powershell appveyor/install_opengl.ps1"
+
+build: false  # Not a C# project, build stuff at the test step instead.
+
+test_script:
+  - "python -c \"import pyglet; r = pyglet.gl.gl_info.get_renderer(); print(r); assert 'gallium' in r.lower()\""
