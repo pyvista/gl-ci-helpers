@@ -1,9 +1,12 @@
-# ci-helpers
+# gl-ci-helpers
 
 
 This repository contains a set of scripts that are used by the
 .travis.yml and appveyor.yml files of `vtki`-based packages for the
 Travis and AppVeyor services respectively.
+
+These scripts help set up OpenGL related features like headless displays
+on the CI-services.
 
 The idea is to clone these at the last minute when the continuous integration
 is about to be run. This is better than including this repository as a
