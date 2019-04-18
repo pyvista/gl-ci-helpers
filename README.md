@@ -19,6 +19,6 @@ Include the following lines at the start of the `install` section in
 
 ```yml
 install:
-    - "git clone --depth 1 git://github.com/vtkiorg/ci-helpers.git"
-    - "powershell ci-helpers/appveyor/install_opengl.ps1"
+    - "git clone --depth 1 git://github.com/vtkiorg/gl-ci-helpers.git"
+    - "powershell gl-ci-helpers/appveyor/install_opengl.ps1"
 ```
