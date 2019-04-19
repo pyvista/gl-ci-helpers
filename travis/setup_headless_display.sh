@@ -1,7 +1,7 @@
 #!/bin/sh
 set -x
 sudo apt update && sudo apt install python-qt4 libgl1-mesa-glx
-sudo apt-get xvfb
+sudo apt-get install -y xvfb
 export DISPLAY=:99.0
 export VTKI_OFF_SCREEN=True
 which Xvfb
