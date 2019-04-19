@@ -34,7 +34,7 @@ Include the following in the `before_script` section of your `.travis.yml`
 
 ```yml
 dist: xenial
-before_script:
+before_install:
   # configure a headless display
   - git clone --depth 1 git://github.com/vtkiorg/gl-ci-helpers.git
   - source ./gl-ci-helpers/travis/setup_headless_display.sh
