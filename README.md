@@ -37,5 +37,5 @@ dist: xenial
 before_script:
   # configure a headless display
   - git clone --depth 1 git://github.com/vtkiorg/gl-ci-helpers.git
-  - sh gl-ci-helpers/travis/setup_headless_display.sh
+  - source ./gl-ci-helpers/travis/setup_headless_display.sh
 ```
