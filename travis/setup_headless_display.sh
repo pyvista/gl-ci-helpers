@@ -1,4 +1,5 @@
-#!/bin/sh -x
+#!/bin/sh
+set -x
 sudo apt update && sudo apt install python-qt4 libgl1-mesa-glx
 sudo apt-get xvfb
 export DISPLAY=:99.0
