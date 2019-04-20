@@ -1,7 +1,7 @@
 # gl-ci-helpers
 
 [![Build Status](https://dev.azure.com/vtkiorg/gl-ci-helpers/_apis/build/status/vtkiorg.gl-ci-helpers?branchName=master)](https://dev.azure.com/vtkiorg/gl-ci-helpers/_build/latest?definitionId=1&branchName=master)
-
+[![Build status](https://ci.appveyor.com/api/projects/status/97622gd8ce1e3hgn/branch/master?svg=true)](https://ci.appveyor.com/project/banesullivan/gl-ci-helpers/branch/master)
 
 This repository contains a set of scripts that are used by the
 `.travis.yml` and `appveyor.yml` files of `vtki`-based packages for the
