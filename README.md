@@ -1,5 +1,7 @@
 # gl-ci-helpers
 
+[![Build Status](https://dev.azure.com/vtkiorg/gl-ci-helpers/_apis/build/status/vtkiorg.gl-ci-helpers?branchName=master)](https://dev.azure.com/vtkiorg/gl-ci-helpers/_build/latest?definitionId=1&branchName=master)
+
 
 This repository contains a set of scripts that are used by the
 `.travis.yml` and `appveyor.yml` files of `vtki`-based packages for the
@@ -25,6 +27,7 @@ install:
   # configure a headless display
   - "git clone --depth 1 git://github.com/vtkiorg/gl-ci-helpers.git"
   - "powershell gl-ci-helpers/appveyor/install_opengl.ps1"
+  - "SET VTKI_OFF_SCREEN=True"
 ```
 
 ### Travis
