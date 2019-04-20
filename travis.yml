@@ -1,0 +1,17 @@
+sudo: required
+
+dist: xenial
+
+os:
+  - linux
+
+language: python
+
+before_install:
+  # configure a headless display
+  - git clone --depth 1 git://github.com/vtkiorg/gl-ci-helpers.git
+  - source ./gl-ci-helpers/travis/setup_headless_display.sh
+  
+  
+notifications:
+  email: false
