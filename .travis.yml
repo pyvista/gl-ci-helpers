@@ -13,10 +13,10 @@ before_install:
   
   
 install:
-  - "pip install -q pyglet"
+  - "pip install vtki"
 
 script:
-  - python -c "import pyglet; r = pyglet.gl.gl_info.get_renderer(); print(r); assert 'gallium' in r.lower()"
+  - python -c "from vtki import examples; examples.load_globe().plot();"
   
   
 notifications:
