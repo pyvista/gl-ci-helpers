@@ -13,10 +13,10 @@ before_install:
   
   
 install:
-  - "pip install vtki"
+  - "pip install vista"
 
 script:
-  - python -c "from vtki import examples; examples.load_globe().plot();"
+  - python -c "from vista import examples; examples.load_globe().plot();"
   
   
 notifications:

@@ -1,11 +1,11 @@
 # gl-ci-helpers
 
-[![Build Status](https://travis-ci.org/vtkiorg/gl-ci-helpers.svg?branch=master)](https://travis-ci.org/vtkiorg/gl-ci-helpers)
-[![Build Status](https://dev.azure.com/vtkiorg/gl-ci-helpers/_apis/build/status/vtkiorg.gl-ci-helpers?branchName=master)](https://dev.azure.com/vtkiorg/gl-ci-helpers/_build/latest?definitionId=1&branchName=master)
+[![Build Status](https://travis-ci.org/pyvista/gl-ci-helpers.svg?branch=master)](https://travis-ci.org/pyvista/gl-ci-helpers)
+[![Build Status](https://dev.azure.com/pyvista/gl-ci-helpers/_apis/build/status/pyvista.gl-ci-helpers?branchName=master)](https://dev.azure.com/pyvista/gl-ci-helpers/_build/latest?definitionId=1&branchName=master)
 [![Build status](https://ci.appveyor.com/api/projects/status/97622gd8ce1e3hgn/branch/master?svg=true)](https://ci.appveyor.com/project/banesullivan/gl-ci-helpers/branch/master)
 
 This repository contains a set of scripts that are used by the
-`.travis.yml` and `appveyor.yml` files of `vtki`-based packages for the
+`.travis.yml` and `appveyor.yml` files of `vista`-based packages for the
 Travis and AppVeyor services respectively.
 
 These scripts help set up OpenGL related features like headless displays
@@ -26,9 +26,9 @@ Include the following lines at the start of the `install` section in
 ```yml
 install:
   # configure a headless display
-  - "git clone --depth 1 git://github.com/vtkiorg/gl-ci-helpers.git"
+  - "git clone --depth 1 git://github.com/pyvista/gl-ci-helpers.git"
   - "powershell gl-ci-helpers/appveyor/install_opengl.ps1"
-  - "SET VTKI_OFF_SCREEN=True"
+  - "SET VISTA_OFF_SCREEN=True"
 ```
 
 ### Travis
@@ -40,6 +40,6 @@ Include the following in the `before_script` section of your `.travis.yml`
 dist: xenial
 before_install:
   # configure a headless display
-  - git clone --depth 1 git://github.com/vtkiorg/gl-ci-helpers.git
+  - git clone --depth 1 git://github.com/pyvista/gl-ci-helpers.git
   - source ./gl-ci-helpers/travis/setup_headless_display.sh
 ```
