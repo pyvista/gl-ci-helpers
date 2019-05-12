@@ -5,7 +5,7 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/97622gd8ce1e3hgn/branch/master?svg=true)](https://ci.appveyor.com/project/banesullivan/gl-ci-helpers/branch/master)
 
 This repository contains a set of scripts that are used by the
-`.travis.yml` and `appveyor.yml` files of `vista`-based packages for the
+`.travis.yml` and `appveyor.yml` files of `pyvista`-based packages for the
 Travis and AppVeyor services respectively.
 
 These scripts help set up OpenGL related features like headless displays
@@ -28,7 +28,7 @@ install:
   # configure a headless display
   - "git clone --depth 1 git://github.com/pyvista/gl-ci-helpers.git"
   - "powershell gl-ci-helpers/appveyor/install_opengl.ps1"
-  - "SET VISTA_OFF_SCREEN=True"
+  - "SET PYVISTA_OFF_SCREEN=True"
 ```
 
 ### Travis

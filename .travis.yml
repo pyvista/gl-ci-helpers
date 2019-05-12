@@ -13,10 +13,10 @@ before_install:
   
   
 install:
-  - "pip install vista"
+  - "pip install pyvista"
 
 script:
-  - python -c "from vista import examples; examples.load_globe().plot();"
+  - python -c "from pyvista import examples; examples.load_globe().plot();"
   
   
 notifications:
