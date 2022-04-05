@@ -26,7 +26,7 @@ Include the following lines at the start of the `install` section in
 ```yml
 install:
   # configure a headless display
-  - "git clone --depth 1 git://github.com/pyvista/gl-ci-helpers.git"
+  - "git clone --depth 1 https://github.com/pyvista/gl-ci-helpers.git"
   - "powershell gl-ci-helpers/appveyor/install_opengl.ps1"
   - "SET PYVISTA_OFF_SCREEN=True"
 ```
@@ -40,6 +40,6 @@ Include the following in the `before_script` section of your `.travis.yml`
 dist: xenial
 before_install:
   # configure a headless display
-  - git clone --depth 1 git://github.com/pyvista/gl-ci-helpers.git
+  - git clone --depth 1 https://github.com/pyvista/gl-ci-helpers.git
   - source ./gl-ci-helpers/travis/setup_headless_display.sh
 ```
