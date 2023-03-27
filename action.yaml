@@ -1,5 +1,7 @@
 name: "gl-ci-helpers-action"
 description: "Ensure OpenGL (and Qt) is available on the host."
 runs:
-  using: "docker"
-  image: "Dockerfile"
+  using: "composite"
+  steps:
+    - id: Install OpenGL
+      run: bash ./entrypoint.sh
