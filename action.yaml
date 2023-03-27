@@ -1,7 +1,5 @@
 name: "gl-ci-helpers-action"
 description: "Ensure OpenGL (and Qt) is available on the host."
-inputs:
-outputs:
 runs:
   using: "docker"
   image: "Dockerfile"
