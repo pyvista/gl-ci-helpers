@@ -3,6 +3,6 @@ description: "Ensure OpenGL (and Qt) is available on the host."
 runs:
   using: "composite"
   steps:
-    - id: Install OpenGL
+    - id: OpenGL
       run: ./entrypoint.sh
       shell: bash -e
