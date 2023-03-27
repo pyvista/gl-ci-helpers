@@ -4,4 +4,5 @@ runs:
   using: "composite"
   steps:
     - id: Install OpenGL
-      run: bash ./entrypoint.sh
+      run: ./entrypoint.sh
+      shell: bash -e
